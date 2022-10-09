@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+import { AppContext } from "./AppContext";
+import RoutesConfig from "./routes/RoutesConfig";
+import dataJson from "./data/logements.json";
 
-function App() {
+const App = () => {
+  const [data, setData] = useState([]);
+
+  // Catch and store datas
+  useEffect(() => {
+    const fetchData = async () => {
+      setData(dataJson);
+    };
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // Router configuration
+    <BrowserRouter>
+      {/* Sharing datas with other components and pages using useContext*/}
+      <AppContext.Provider value={data}>
+        <RoutesConfig />
+      </AppContext.Provider>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

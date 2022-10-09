@@ -1,10 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 const Error404 = () => {
   return (
-    <div>
+    <div className="footer_page">
       <Header />
       <div className="error_block">
         <div className="error_container">
@@ -13,7 +14,7 @@ const Error404 = () => {
             Oups ! La page que vous demandez n'existe pas.
           </p>
         </div>
-        <NavLink to="/p7_kasa_CHOUK_abdelkader/">
+        <NavLink to="/Kasa-P7-OpenClassrooms/">
           <div className="error_link">
             <p>Retournez sur la page d'accueil</p>
           </div>
@@ -23,7 +24,4 @@ const Error404 = () => {
   );
 };
 
-
 export default Error404;
-
-        

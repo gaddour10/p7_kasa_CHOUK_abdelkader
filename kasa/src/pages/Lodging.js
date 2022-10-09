@@ -92,8 +92,6 @@ const Lodging = () => {
                 </div>
                 <div className="lodging_block_infos_item rating">
                   {/* Creating a different display of stars for each host rating */}
-                  {/*jshint eqeqeq: true */}
-
                   {lodgingData.rating == 1 && (
                     <>
                       <img src={starFull} alt="rating-stars" />
